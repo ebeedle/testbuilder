@@ -32,6 +32,7 @@ var detectNetwork = function(cardNumber) {
   //Discover always has a prefix of 6011, 644-649, or 65, and a length of 16 or 19.
 //Maestro always has a prefix of 5018, 5020, 5038, or 6304, and a length of 12-19.
 //slkdjf 
+//
 };
 
 
