@@ -12,6 +12,8 @@ var detectNetwork = function(cardNumber) {
     return 'Diner\'s Club';
   else if (cardNumber.length === 15 && /^3[47]/.test(cardNumber))
     return 'American Express';
+  else if (/^4903|^4905|^4911|^4936|^564182|^633110|^6333|^6759/.test(cardNumber) && (cardNumber.length === 16 || cardNumber.length === 18 || cardNumber.length === 19))
+    return 'Switch';
   else if (/^4/.test(cardNumber) && (cardNumber.length === 13 || cardNumber.length ===16 || cardNumber.length ===19))
     return 'Visa';
   else if (/^5[1-5]/.test(cardNumber) && cardNumber.length === 16)
@@ -20,19 +22,10 @@ var detectNetwork = function(cardNumber) {
     return 'Discover';
   else if (/^5018|^5020|^5038|^6304/.test(cardNumber) && (cardNumber.length >= 12 && cardNumber.length <= 19))
     return 'Maestro';
+  else if (/^62212[6-9]|^6221[3-9][0-9]|^622[2-8][0-9][0-9]|^6229[0-1][0-9]|^62292[0-5]|^62[4-6]|^628[2-8]/.test(cardNumber) && (cardNumber.length >= 16 && cardNumber.length <= 19))
+    return 'China UnionPay';
   else
     return null;
-  
-
-  // Note: `cardNumber` will always be a string
-  // The Diner's Club network always starts with a 38 or 39 and is 14 digits long
-  // The American Express network always starts with a 34 or 37 and is 15 digits long
-
-  // Once you've read this, go ahead and try to implement this function, then return to the console.
-  //Discover always has a prefix of 6011, 644-649, or 65, and a length of 16 or 19.
-//Maestro always has a prefix of 5018, 5020, 5038, or 6304, and a length of 12-19.
-//slkdjf 
-//
 };
 
 
